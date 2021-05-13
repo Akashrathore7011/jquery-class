@@ -1,0 +1,70 @@
+<!-- api - application programming interface -->
+<!-- Cricket api -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Load CrickApi using ajax</h1>
+
+    <input type="text" name="" id="box" placeholder="Enter name of cricketer">
+    <input type="text" name="" id="p_id" placeholder="P_id" disabled>
+    <button id="btn">LOAD AJAX</button>
+    <button id="show-btn">Show Data</button>
+
+    <div id="data">
+
+    </div>
+    <script>
+        $("#btn").click(function ()
+        {
+            $.ajax({
+                method : "get",
+                url:"https://cricapi.com/api/playerFinder?apikey=RiPTCn1FNCUNmr3QzfBy03EMIJG2&name="+$("#box").val(),
+                success : function(data){
+                        var jsonData = data;
+                        p_id = jsonData.data[0]["pid"];
+                        console.log(p_id);
+                        $("#p_id").val(p_id);
+                }
+                
+            });
+
+
+        });
+
+
+        $("#show-btn").click(function ()
+        {
+            $.ajax({
+                method : "get",
+                url: "https://cricapi.com/api/playerStats?apikey=RiPTCn1FNCUNmr3QzfBy03EMIJG2&pid="+$("#p_id").val(),
+                success : function(data){
+                        var imgURL=data["imageURL"];
+                        img = document.createElement("img");
+                        // img.src = imgURL;
+                        // img.attr("src",imgURL);
+                        img.src = imgURL;
+                        console.log(img);
+                        var div= $("#data");
+                        div.append(img);
+
+                }
+                
+            });
+
+
+        });
+
+
+    </script>
+</body>
+</html>
+	
+	
+	

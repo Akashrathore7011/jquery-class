@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 600px;
+            width: 100%;
+            border: 2px solid red;
+            position: relative;
+        }
+        
+        img {
+            width: 35%;
+            position: absolute;
+        }
+        
+        /* img:hover { */
+            /* filter: blur(10px); */
+            /* filter: grayscale(); */
+            /* filter: brightness(150%); */
+            /* filter: invert(); */
+        /* } */
+    </style>
+</head>
+
+<body>
+    <h1>Custom Anination</h1>
+    <button>CLICK ME</button>
+    <hr>
+    <div>
+        <img src="https://miro.medium.com/max/3840/1*IXj6F6TiST3LK9r50a-MLw.jpeg" alt="">
+
+    </div>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        var img = $("img");
+        $("button").click(function(){
+            img.animate({
+                'left': 700,
+                'opacity': 0.5,
+            }, 1000);
+            img.animate({
+                'top': 400,
+                'opacity': 1,
+            }, 1000);
+
+
+            img.animate({
+                'left': 0,
+                'opacity': 1,
+            }, 1000);
+
+
+            img.animate({
+                'top': 0,
+                'opacity': 1,
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>

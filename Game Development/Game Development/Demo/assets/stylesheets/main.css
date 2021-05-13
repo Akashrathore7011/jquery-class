@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#inner-container {
+    height: 1250px;
+    width: 10000px;
+    background-image: url("https://www.spriters-resource.com/resources/sheets/19/20592.png?updated=1609108338");
+    background-size: cover;
+}
+
+.image {
+    position: fixed;
+    bottom: 5%;
+    left: 40%;
+    z-index: 1;
+}
+
+.image img {
+    width: 150px;
+}

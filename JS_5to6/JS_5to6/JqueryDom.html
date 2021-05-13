@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+    <style>
+        .row {
+            display: flex;
+        }
+        
+        .col {
+            width: 33%;
+            border: 2px solid red;
+            margin: 0px 10px;
+            padding: 10px;
+        }
+        
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JQUERY DOM</h1>
+
+    <div class="row">
+        <div class="col">
+            <h2>This is column 1</h2>
+            <img src="https://miro.medium.com/max/3840/1*IXj6F6TiST3LK9r50a-MLw.jpeg" alt="">
+            <hr>
+            <h5>Heading before button</h5>
+            <button>CLICK ME</button>
+            <h5>Heading AFTER BUTTON</h5>
+
+        </div>
+
+        <div class="col">
+            <h2>This is column 2</h2>
+            <img src="https://miro.medium.com/max/3840/1*IXj6F6TiST3LK9r50a-MLw.jpeg" alt="">
+            <hr>
+            <h5>Heading before button</h5>
+            <button>CLICK ME</button>
+            <h5>Heading AFTER BUTTON</h5>
+
+        </div>
+
+        <div class="col">
+            <h2>This is column 3</h2>
+            <img src="https://miro.medium.com/max/3840/1*IXj6F6TiST3LK9r50a-MLw.jpeg" alt="">
+            <hr>
+            <h5>Heading before button</h5>
+            <button>CLICK ME</button>
+            <h5>Heading AFTER BUTTON</h5>
+
+        </div>
+
+    </div>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $("button").click(function() {
+            // $(this).siblings("h5").hide(1000);
+            // $(this).siblings("img").hide(1000);
+            // $(this).parent().hide(1000);
+            // $(this).parents().slideToggle(1000);
+            // $(this).parentsUntil('.row').slideToggle(1000);
+            // $(this).prev("h5").hide(1000);
+            $(this).next("h5").toggle(1000);
+        })
+    </script>
+</body>
+
+</html>
+
+</html>
